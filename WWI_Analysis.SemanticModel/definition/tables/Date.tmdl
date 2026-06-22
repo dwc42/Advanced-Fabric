@@ -1,6 +1,12 @@
 table Date
 	lineageTag: 4b285ac7-5bf6-4f06-96a6-915af13bd8fe
 
+	measure 'Total Quanity' = ```
+			SUM('Sale'[Quantity]) 
+			```
+		formatString: 0
+		lineageTag: d31b84f0-f102-4d5a-aed8-a11f5bc015db
+
 	column Date
 		dataType: dateTime
 		formatString: Long Date

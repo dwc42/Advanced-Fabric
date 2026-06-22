@@ -1,57 +1,33 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "3364c3c7d5423ec183f2",
+  "name": "5d1e3902a418674076a0",
   "position": {
-    "x": 23.631367190465348,
-    "y": 130.59439763151903,
-    "z": 9000,
-    "height": 565.90905640324911,
-    "width": 605.70925377666435,
-    "tabOrder": 4000
+    "x": 441.68150075311513,
+    "y": 14.722716691770506,
+    "z": 14001,
+    "height": 49.426263179515267,
+    "width": 198.75667533890183,
+    "tabOrder": 9001
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "multiRowCard",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "SalesPerson"
+                      "Entity": "Date"
                     }
                   },
-                  "Property": "Preferred Name"
+                  "Property": "Total Quanity"
                 }
               },
-              "queryRef": "SalesPerson.Preferred Name",
-              "nativeQueryRef": "Preferred Name",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Sale"
-                        }
-                      },
-                      "Property": "City Key"
-                    }
-                  },
-                  "Function": 5
-                }
-              },
-              "queryRef": "CountNonNull(Sale.City Key)",
-              "nativeQueryRef": "Count of City Key"
+              "queryRef": "Date.Total Quanity",
+              "nativeQueryRef": "Total Quanity"
             }
           ]
         }
@@ -60,18 +36,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Sale"
-                      }
-                    },
-                    "Property": "City Key"
+                  "SourceRef": {
+                    "Entity": "Date"
                   }
                 },
-                "Function": 5
+                "Property": "Total Quanity"
               }
             },
             "direction": "Descending"
@@ -81,44 +52,70 @@
       }
     },
     "objects": {
-      "categoryAxis": [
+      "card": [
         {
           "properties": {
-            "axisType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Categorical'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
+            "barColor": {
               "solid": {
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 6,
-                      "Percent": 0.2
+                      "ColorId": 4,
+                      "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "barWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "4L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataLabels": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.4
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11L"
                 }
               }
             }
@@ -152,6 +149,13 @@
               }
             },
             "showPinButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showPersonalizeVisualButton": {
               "expr": {
                 "Literal": {
                   "Value": "false"
